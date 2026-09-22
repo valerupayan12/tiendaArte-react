@@ -1,90 +1,103 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+
 import './App.css'
 
 function App() {
-        {/*<!-- creamos variable productos (diccionario) -->*/}
-    const productos = [
-      { id: 1, nombre: 'Modelo A', descripcion: 'Modelo 3d', precio: '499.99'},
-      { id: 2, nombre: 'Modelo B', descripcion: 'Modelo oleo', precio: '199.99'},
-      { id: 3, nombre: 'Modelo C', descripcion: 'Modelo en greda', precio: '299.99'},
-      { id: 4, nombre: 'Modelo D', descripcion: 'Modelo en vidrio', precio: '99.99'},
-    ]
-    return (
+  const productos = [
+    {
+      id: 1,
+      nombre: 'Neón Aurora',
+      descripcion: 'Obra digital abstracta con tonos violeta, azul y brillo moderno.',
+      precio: 149.99,
+      imagen:
+        'https://images.unsplash.com/photo-1515405295579-ba7b45403062?auto=format&fit=crop&w=800&q=80',
+    },
+    {
+      id: 2,
+      nombre: 'Paisaje Futurista',
+      descripcion: 'Escena digital minimalista inspirada en ciudades del mañana.',
+      precio: 199.99,
+      imagen:
+        'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&w=800&q=80',
+    },
+    {
+      id: 3,
+      nombre: 'Magma Dreams',
+      descripcion: 'Composición visual vibrante con textura y movimiento artístico.',
+      precio: 249.99,
+      imagen:
+        'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=800&q=80',
+    },
+    {
+      id: 4,
+      nombre: 'Minimal Motion',
+      descripcion: 'Pieza elegante y moderna para espacios creativos y contemporáneos.',
+      precio: 99.99,
+      imagen:
+        'https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=800&q=80',
+    },
+  ]
+
+  return (
     <>
-          
-        {/*<!-- ENCABEZADO PRINCIPAL (HEADER) -->*/}
-      <header id="encabezado"> {/*<!-- Cabecera del sitio con fondo verde agua -->*/}
-          <h1>Arte Digital</h1> {/*<!-- Nombre principal del establecimiento -->*/}
-          <p>El mejor arte contemporáneo</p> {/*<!-- Eslogan de la veterinaria -->*/}
-          
-          {/*<!-- NAV: MENÚ DE NAVEGACIÓN -->*/}
-          <nav id="menu-principal"> {/*<!-- Envoltorio del menú principal -->*/}
-              <ul> {/*<!-- Lista desordenada de opciones del menú -->*/}
-                  <li><a href="#inicio">Inicio</a></li> {/*<!-- Enlace a la sección de bienvenida -->*/}
-                  <li><a href="productos.html">Productos</a></li> {/*<!-- Clic: Permanece en el catálogo de productos -->*/}
-                  <li><a href="#album">Servicios y Productos</a></li> {/*<!-- Enlace directo a la parte de servicios y productos del inicio -->*/}
-                  <li><a href="registro.html">Registro</a></li>
-                  <li><a href="login.html">Login</a></li>
-              </ul>
-          </nav>
+      <header id="encabezado">
+        <h1>Arte Digital</h1>
+        <p>Creaciones visuales para espacios modernos</p>
+
+        <nav id="menu-principal">
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#registro">Registro</a></li>
+            <li><a href="#login">Login</a></li>
+          </ul>
+        </nav>
       </header>
 
+      <main id="contenido">
+        <section id="inicio" className="seccion">
+          <h2>Bienvenidos a Arte Digital</h2>
+          <p>Descubre piezas únicas creadas con creatividad, tecnología y estilo contemporáneo.</p>
+          <p>Transformamos ideas en arte visual para inspirar, decorar y personalizar cada espacio.</p>
 
-        {/*<!-- CONTENIDO PRINCIPAL (MAIN) -->*/}
-    <main id="contenido"> {/* Contenedor principal de la página */}
-          
-          {/*<!-- SECCIÓN 1: INICIO Y PRESENTACIÓN -->*/}
-          <section id="inicio" className="seccion"> {/*<!-- Sección inicial de bienvenida -->*/}
-              <h2>Bienvenidos a Arte Digital</h2> {/*<!-- Título principal de bienvenida -->*/}
-              <p>Te damos solo lo mejor del arte contemporáneo.</p> {/*<!-- Descripción general del negocio -->*/}
-              <p>¡Tu tranquilidad y satisfacción son nuestra prioridad!</p> {/*<!-- Mensaje motivacional -->*/}
+          <div className="contenedor-video">
+            <video autoPlay muted loop controls className="video-promocional">
+              <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+              Tu navegador no soporta la reproducción de video HTML5.
+            </video>
+          </div>
+        </section>
 
-              {/*<!-- CONTENEDOR DEL VIDEO PROMOCIONAL -->*/}
-              <div className="contenedor-video"> {/*<!-- Contenedor para centrar el video -->*/}
-                  <video autoplay muted loop controls className="video-promocional"> {/*<!-- Video con reproducción automática y en bucle -->*/}
-                      <source src="video/presentacion.mp4" type="video/mp4"/> {/*<!-- Ruta del archivo de video -->*/}
-                      Tu navegador no soporta la reproducción de video HTML5. {/*<!-- Texto de respaldo si no funciona -->*/}
-                  </video>
-              </div>
-          </section>
+        <section id="productos" className="seccion">
+          <h2>Explora nuestra colección digital</h2>
+          <h3>Obras modernas para hogares, estudios y oficinas</h3>
 
-          {/*<!-- SECCIÓN 2: ÁLBUM Y GALERÍA DE DESTACADOS -->*/}
-          <section id="album" className="seccion"> {/*<!-- Sección con servicios y productos destacados -->*/}
-              <h2>¡Revisa Nuestra Galería de Arte!</h2> {/*<!-- Título de la galería -->*/}
-              <h3>Conoce lo mejor del arte contemporáneo</h3> {/*<!-- Subtítulo informativo -->*/}
+          <div className="galeria">
+            {productos.map((producto) => (
+              <article key={producto.id} className="tarjeta">
+                <div className="espacio-imagen">
+                  <img src={producto.imagen} alt={producto.nombre} />
+                </div>
+                <h3>{producto.nombre}</h3>
+                <p className="descripcion">{producto.descripcion}</p>
+                <p className="precio">Precio: ${producto.precio.toFixed(2)}</p>
+              </article>
+            ))}
+          </div>
+        </section>
 
-              {/*<!-- GALERÍA EN CUADRÍCULA -->*/}
-                            <div className="galeria">
-                                {productos.map((producto) => (
-                                 <article key={producto.id} className="tarjeta"> {/* Tarjeta individual para cada producto */}
-                  <div className="espacio-imagen"> {/*<!-- Contenedor para la imagen del producto -->*/}
-                      <img src={producto.imagen} alt={producto.nombre} /> {/*<!-- Imagen del producto -->*/}
-                  </div>
-                  <h3>{producto.nombre}</h3> {/*<!-- Título del producto -->*/}
-                  <p className="descripcion">{producto.descripcion}</p> {/*<!-- Descripción del producto -->*/}
-                  <p className="precio">Precio: {producto.precio.toFixed(2)}</p> {/*<!-- Precio del producto -->*/}
-                </article>
-                                ))}
-                            </div>
-          </section>
+        <section id="galeria" className="seccion">
+          <h2>Sobre nuestra galería</h2>
+          <p>Seleccionamos obras digitales originales pensadas para ofrecer estilo, identidad y energía visual.</p>
+          <p>Desde piezas abstractas hasta ilustraciones minimalistas, cada diseño está pensado para inspirar.</p>
+        </section>
+      </main>
 
-          {/*<!-- SECCIÓN DE INFORMACIÓN INSTITUCIONAL -->*/}
-          <section className="seccion"> {/*<!-- Sección adicional con información general de la clínica -->*/}
-              <h2>Sobre nuestra galeria de arte</h2> {/*<!-- Título de la sección -->*/}
-              <p>Vendemos los mejores trabajos de arte local.</p> {/*<!-- Descripción de mascotas atendidas -->*/}
-              <p>Ofrecemos una amplia selección de obras únicas y creativas.</p> {/*<!-- Resumen de servicios y productos -->*/}
-          </section>
-      </main> 
-      {/*<!-- PIE DE PÁGINA (FOOTER) -->*/}
-      <footer id="pie"> {/*<!-- Pie de página final del sitio -->*/}
-          <p><small>&copy; 2025 Arte Digital - Todos los derechos reservados</small></p> {/*<!-- Derechos reservados -->*/}
+      <footer id="pie">
+        <p><small>&copy; 2026 Arte Digital - Todos los derechos reservados</small></p>
       </footer>
-
     </>
-    )
+  )
 }
-  
+
 export default App
