@@ -1,5 +1,6 @@
 
 import './App.css'
+import heroImage from './assets/hero.png'
 
 function App() {
   const productos = [
@@ -8,32 +9,28 @@ function App() {
       nombre: 'Neón Aurora',
       descripcion: 'Obra digital abstracta con tonos violeta, azul y brillo moderno.',
       precio: 149.99,
-      imagen:
-        'https://images.unsplash.com/photo-1515405295579-ba7b45403062?auto=format&fit=crop&w=800&q=80',
+      imagen: heroImage,
     },
     {
       id: 2,
       nombre: 'Paisaje Futurista',
       descripcion: 'Escena digital minimalista inspirada en ciudades del mañana.',
       precio: 199.99,
-      imagen:
-        'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&w=800&q=80',
+      imagen: heroImage,
     },
     {
       id: 3,
       nombre: 'Magma Dreams',
       descripcion: 'Composición visual vibrante con textura y movimiento artístico.',
       precio: 249.99,
-      imagen:
-        'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=800&q=80',
+      imagen: heroImage,
     },
     {
       id: 4,
       nombre: 'Minimal Motion',
       descripcion: 'Pieza elegante y moderna para espacios creativos y contemporáneos.',
       precio: 99.99,
-      imagen:
-        'https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=800&q=80',
+      imagen: heroImage,
     },
   ]
 
