@@ -1,97 +1,108 @@
 
 import './App.css'
-import heroImage from './assets/hero.png'
+import imagenBase from './assets/img/2aN_BASE.jpg'
+import rosyMucha from './assets/img/2-rosy-mucha.jpg'
+import protectorSolar from './assets/img/protectorSolas.jpeg'
+import sakura from './assets/img/sakura.jpeg'
+import tocobo from './assets/img/TOCOBO04.jpg'
+import cosmeticosCoreanos from './assets/img/maquillajeskincare.jpg'
+import lipTatto from './assets/img/liptatto.jpg'
+import portadaCoreana from './assets/img/coreana.jpg'
+import logoSkinInternational from './assets/img/logoskininternational.png'
+import tratamientoVitaminaC from './assets/img/15552_krskin_vc.jpg'
 
 function App() {
   const productos = [
     {
       id: 1,
-      nombre: 'Neón Aurora',
-      descripcion: 'Obra digital abstracta con tonos violeta, azul y brillo moderno.',
-      precio: 149.99,
-      imagen: heroImage,
+      nombre: 'Base de maquillaje 2aN',
+      imagen: imagenBase,
     },
     {
       id: 2,
-      nombre: 'Paisaje Futurista',
-      descripcion: 'Escena digital minimalista inspirada en ciudades del mañana.',
-      precio: 199.99,
-      imagen: heroImage,
+      nombre: 'Rosy Mucha',
+      imagen: rosyMucha,
     },
     {
       id: 3,
-      nombre: 'Magma Dreams',
-      descripcion: 'Composición visual vibrante con textura y movimiento artístico.',
-      precio: 249.99,
-      imagen: heroImage,
+      nombre: 'Protector solar',
+      imagen: protectorSolar,
     },
     {
       id: 4,
-      nombre: 'Minimal Motion',
-      descripcion: 'Pieza elegante y moderna para espacios creativos y contemporáneos.',
-      precio: 99.99,
-      imagen: heroImage,
+      nombre: 'Sakura',
+      imagen: sakura,
+    },
+    {
+      id: 5,
+      nombre: 'TOCOBO',
+      imagen: tocobo,
+    },
+    {
+      id: 6,
+      nombre: 'Maquillaje y skincare',
+      imagen: cosmeticosCoreanos,
+    },
+    {
+      id: 7,
+      nombre: 'Lip tattoo',
+      imagen: lipTatto,
+    },
+    {
+      id: 8,
+      nombre: 'Productos coreanos',
+      imagen: portadaCoreana,
+    },
+    {
+      id: 9,
+      nombre: 'K-Skin International',
+      imagen: logoSkinInternational,
+    },
+    {
+      id: 10,
+      nombre: 'Tratamiento vitamina C',
+      imagen: tratamientoVitaminaC,
     },
   ]
 
   return (
     <>
       <header id="encabezado">
-        <h1>Arte Digital</h1>
-        <p>Creaciones visuales para espacios modernos</p>
+        <h1>K-Skin</h1>
+        <p>Lo mejor de la estetica Coreana en tu piel</p>
+        <img src={logoSkinInternational} alt="K-Skin International" width="800" height="400" />
 
         <nav id="menu-principal">
           <ul>
             <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#productos">Productos</a></li>
-            <li><a href="#galeria">Galería</a></li>
-            <li><a href="#registro">Registro</a></li>
-            <li><a href="#login">Login</a></li>
+            <li><a href="#album">Productos</a></li>
           </ul>
         </nav>
       </header>
 
       <main id="contenido">
         <section id="inicio" className="seccion">
-          <h2>Bienvenidos a Arte Digital</h2>
-          <p>Descubre piezas únicas creadas con creatividad, tecnología y estilo contemporáneo.</p>
-          <p>Transformamos ideas en arte visual para inspirar, decorar y personalizar cada espacio.</p>
-
-          <div className="contenedor-video">
-            <video autoPlay muted loop controls className="video-promocional">
-              <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
-              Tu navegador no soporta la reproducción de video HTML5.
-            </video>
-          </div>
+          <h2>Bienvenidos a K-Skin</h2>
+          <p>Los mejores productos de Corea estan aqui.</p>
+          <p>Puedes encontrar todo lo que necesites.</p>
         </section>
 
-        <section id="productos" className="seccion">
-          <h2>Explora nuestra colección digital</h2>
-          <h3>Obras modernas para hogares, estudios y oficinas</h3>
-
+        <section id="album" className="seccion">
+          <h2>Revisa nuestros productos</h2>
+          <img src={portadaCoreana} alt="Productos de skincare coreano" />
           <div className="galeria">
             {productos.map((producto) => (
-              <article key={producto.id} className="tarjeta">
-                <div className="espacio-imagen">
-                  <img src={producto.imagen} alt={producto.nombre} />
-                </div>
+              <article key={producto.id}>
+                <img src={producto.imagen} alt={producto.nombre} />
                 <h3>{producto.nombre}</h3>
-                <p className="descripcion">{producto.descripcion}</p>
-                <p className="precio">Precio: ${producto.precio.toFixed(2)}</p>
               </article>
             ))}
           </div>
         </section>
-
-        <section id="galeria" className="seccion">
-          <h2>Sobre nuestra galería</h2>
-          <p>Seleccionamos obras digitales originales pensadas para ofrecer estilo, identidad y energía visual.</p>
-          <p>Desde piezas abstractas hasta ilustraciones minimalistas, cada diseño está pensado para inspirar.</p>
-        </section>
       </main>
 
       <footer id="pie">
-        <p><small>&copy; 2026 Arte Digital - Todos los derechos reservados</small></p>
+        <p><small>&copy; 2026 K-Skin - Todos los derechos reservados</small></p>
       </footer>
     </>
   )
