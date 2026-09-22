@@ -25,7 +25,7 @@ function App() {
               <ul> {/*<!-- Lista desordenada de opciones del menú -->*/}
                   <li><a href="#inicio">Inicio</a></li> {/*<!-- Enlace a la sección de bienvenida -->*/}
                   <li><a href="productos.html">Productos</a></li> {/*<!-- Clic: Permanece en el catálogo de productos -->*/}
-                  <li><a href="#album">Servicios y Productos</a></li> {/*<!-- Enlace directo a la parte de servicios y productos del inicio -->*/}
+                  <li><a href="#album">Productos</a></li> {/*<!-- Enlace directo a la parte de servicios y productos del inicio -->*/}
                   <li><a href="registro.html">Registro</a></li>
                   <li><a href="login.html">Login</a></li>
               </ul>
@@ -65,7 +65,7 @@ function App() {
                   </div>
                   <h3>{producto.nombre}</h3> {/*<!-- Título del producto -->*/}
                   <p className="descripcion">{producto.descripcion}</p> {/*<!-- Descripción del producto -->*/}
-                  <p className="precio">Precio: {producto.precio.toFixed(2)}</p> {/*<!-- Precio del producto -->*/}
+                  <p className="precio">Precio: {producto.precio}</p> {/*<!-- Precio del producto -->*/}
                 </article>
                                 ))}
                             </div>
